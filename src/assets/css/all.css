@@ -1,0 +1,35 @@
+/* 全局规范 */
+html,
+body,
+#app {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    min-width: 1366px;
+}
+
+.el-breadcrumb {
+    margin-bottom: 20px;
+    font-size: 15px;
+}
+
+.el-card {
+    /* 格式：inset/outset 水平偏移量 垂直偏移量 模糊范围 传播距离 阴影颜色； */
+    box-shadow: 5px 0px 25px #f0f,
+        0px -5px 25px #00f !important;
+}
+
+.el-pagination {
+    margin-top: 15px;
+    /* font-size: 50px; */
+}
+
+
+
+.el-table .el-table__body-wrapper .cell {
+    text-align: center;
+}
+
+.el-table th .cell {
+    text-align: center;
+}
