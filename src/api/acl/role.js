@@ -3,18 +3,17 @@
 */
 import request from '@/utils/request'
 
-const api_name = '/admin/acl/role'
+const api_name = '/role'
 
 export default {
 
   /* 
-  获取角色分页列表(带搜索)
+  获取角色
   */
-  getPageList(page, limit, searchObj) {
+  getPageList() {
     return request({
-      url: `${api_name}/${page}/${limit}`,
-      method: 'get',
-      params: searchObj // url查询字符串或表单键值对
+      url: `${api_name}`,
+      method: 'get'
     })
   },
 

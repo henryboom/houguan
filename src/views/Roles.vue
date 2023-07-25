@@ -35,8 +35,8 @@
         </el-dialog>
         <!-- 角色列表区域 -->
         <!-- row-key="id" 是2019年3月提供的新特性，
-if there's nested data, rowKey is required.
-如果这是一个嵌套的数据，rowkey 是必须添加的属性 -->
+        if there's nested data, rowKey is required.
+        如果这是一个嵌套的数据，rowkey 是必须添加的属性 -->
         <el-card class="box-card">
             <!-- 添加角色 -->
             <el-row :gutter="15">
@@ -135,6 +135,7 @@ if there's nested data, rowKey is required.
 }
 </style>
 <script>
+import { getPageList } from "@/api/acl/role"
 export default {
     data() {
         return {
@@ -214,15 +215,19 @@ export default {
     },
     methods: {
         // 获取角色列表
-        async getRoleList() {
-            const { data: res } = await this.$http.get('roles')
-            //如果返回状态为异常状态则报错并返回
-            // if (res.meta.status !== 200)
-            //     return this.$message.error('获取角色列表失败')
-            // //如果返回状态正常，将请求的数据保存在data中
-            // this.roleList = res.data
-            // console.log(res.data[0].roleName)
-            this.roleList = res.data;
+        getRoleList() {
+
+
+            // const { data: res } = this.$http.get('roles')
+            getPageList().then(res => {
+                // 如果返回状态为异常状态则报错并返回
+                if (res.meta.status !== 200)
+                    return this.$message.error('获取角色列表失败')
+                //如果返回状态正常，将请求的数据保存在data中
+                this.roleList = res.data
+                // console.log(res.data[0].roleName)
+            }).catch(err => { err })
+
         },
         //添加角色
         addRole() {

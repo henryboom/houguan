@@ -6,9 +6,12 @@ import { getToken } from '@/utils/auth'
 // create an axios instance
 const service = axios.create({
   baseURL: process.env.VUE_APP_BASE_API, // url = base url + request url
+  // baseURL: '/dev-api', // url = base url + request url
   withCredentials: true, // send cookies when cross-domain requests
   timeout: 5000 // request timeout
 })
+
+console.log(process.env)
 
 //请求拦截器：携带的token字段
 service.interceptors.request.use(

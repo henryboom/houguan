@@ -3,10 +3,10 @@ import request from '@/utils/request'
 /* 
 权限管理相关的API请求函数
 */
-const api_name = '/admin/acl/permission'
+const api_name = '/rights'
 
 export default {
-  
+
   /* 
   获取权限(菜单/功能)列表
   */
@@ -16,7 +16,7 @@ export default {
       method: 'get'
     })
   },
-  
+
   /* 
   删除一个权限项
   */
@@ -26,7 +26,7 @@ export default {
       method: "delete"
     })
   },
-  
+
   /* 
   保存一个权限项
   */
@@ -66,7 +66,7 @@ export default {
     return request({
       url: `${api_name}/doAssign`,
       method: "post",
-      params: {roleId, permissionId}
+      params: { roleId, permissionId }
     })
   }
 }

@@ -32,7 +32,7 @@ const router = new VueRouter({
                     component: User  //用户管理
                 },
                 {
-                    path: 'roles',//产品列表
+                    path: 'roles',//角色列表
                     component: Roles,
                 },
                 {

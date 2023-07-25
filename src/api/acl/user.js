@@ -37,7 +37,7 @@ export function logout() {
 获取当前用户的菜单权限列表
 */
 export function getMenu() {
-  return request('/admin/acl/index/menu')
+  return request('/menu')
 }
 
 
